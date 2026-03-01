@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent - 张三</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #dc2626;
+            --secondary-color: #b91c1c;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #fef2f2;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--text-primary); }
+        a { text-decoration: none; color: inherit; }
+        .navbar { position: fixed; top: 0; width: 100%; background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 1000; padding: 1rem 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-primary); transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); margin-bottom: 2rem; }
+        .page-header { padding: 6rem 2rem 3rem; text-align: center; background: linear-gradient(135deg, var(--bg-light), var(--white)); }
+        .page-title { font-size: 2.5rem; margin-bottom: 1rem; }
+        .page-subtitle { color: var(--text-secondary); font-size: 1.2rem; }
+        .overview-card { max-width: 800px; margin: 0 auto 3rem; padding: 2rem; background: var(--white); border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .overview-title { color: var(--primary-color); margin-bottom: 1rem; }
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+        .section-title { font-size: 1.75rem; margin-bottom: 2rem; text-align: center; }
+        .content-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem; }
+        .content-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .content-card:hover { transform: translateY(-5px); }
+        .card-header { padding: 1.5rem; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: var(--white); }
+        .card-title { font-size: 1.25rem; font-weight: bold; }
+        .card-body { padding: 1.5rem; }
+        .card-text { color: var(--text-secondary); margin-bottom: 1rem; }
+        .card-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+        .tag { background: var(--bg-light); padding: 0.25rem 0.75rem; border-radius: 15px; font-size: 0.85rem; color: var(--text-secondary); }
+        .card-link { color: var(--primary-color); font-weight: 500; display: inline-flex; align-items: center; gap: 0.25rem; }
+        footer { background: var(--text-primary); color: var(--white); text-align: center; padding: 2rem; margin-top: 3rem; }
+        @media (max-width: 768px) { .page-title { font-size: 1.75rem; } .content-grid { grid-template-columns: 1fr; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="back-btn">← 返回首页</a>
+            <ul class="nav-links">
+                <li><a href="capabilities.html" style="color: var(--primary-color);">能力体系</a></li>
+                <li><a href="prompt-engineering.html">Prompt Engineering</a></li>
+                <li><a href="rag.html">RAG</a></li>
+                <li><a href="skills.html">Skills</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">🤖 Agent (智能体)</h1>
+        <p class="page-subtitle">智能体架构设计与应用开发</p>
+    </header>
+
+    <div class="section-container">
+        <!-- 概述 -->
+        <div class="overview-card">
+            <h2 class="overview-title">关于我在这方面的经验</h2>
+            <p class="card-text">（在此处填写你的 Agent 相关经历，例如：搭建过哪些智能体系统、掌握哪些框架如 LangGraph/AutoGen、在多智能体协作、工具调用等方面有何实践等）</p>
+        </div>
+
+        <h2 class="section-title">项目与案例</h2>
+        <div class="content-grid">
+            <!-- 卡片 1 -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-title">🔧 多工具调用助手</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">设计支持多工具调用的 Agent 架构，可实现搜索、计算、代码执行等自动化任务</p>
+                    <div class="card-tags">
+                        <span class="tag">Function Calling</span>
+                        <span class="tag">Tool Use</span>
+                        <span class="tag">ReAct</span>
+                    </div>
+                    <a href="#" class="card-link">查看详情 →</a>
+                </div>
+            </div>
+
+            <!-- 卡片 2 -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-title">🔄 多智能体协作系统</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">基于角色分工的多 Agent 协作框架，实现复杂任务的分解与协同完成</p>
+                    <div class="card-tags">
+                        <span class="tag">Multi-Agent</span>
+                        <span class="tag">LangGraph</span>
+                        <span class="tag">协作编排</span>
+                    </div>
+                    <a href="#" class="card-link">查看详情 →</a>
+                </div>
+            </div>
+
+            <!-- 卡片 3 -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-title">🧠 自主规划与反思</div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">实现 Agent 的自规划、自我反思机制，提升复杂任务的解决能力</p>
+                    <div class="card-tags">
+                        <span class="tag">Plan-and-Solve</span>
+                        <span class="tag">Self-Reflection</span>
+                        <span class="tag">迭代优化</span>
+                    </div>
+                    <a href="#" class="card-link">查看详情 →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 张三。All rights reserved.</p>
+    </footer>
+</body>
+</html>

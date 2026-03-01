@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - 张三</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-color: #d97706;
+            --secondary-color: #b45309;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --bg-light: #fffbeb;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--text-primary); }
+        a { text-decoration: none; color: inherit; }
+        .navbar { position: fixed; top: 0; width: 100%; background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); z-index: 1000; padding: 1rem 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-primary); transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary-color); }
+        .back-btn { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); margin-bottom: 2rem; }
+        .page-header { padding: 6rem 2rem 3rem; text-align: center; background: linear-gradient(135deg, var(--bg-light), var(--white)); }
+        .page-title { font-size: 2.5rem; margin-bottom: 1rem; }
+        .page-subtitle { color: var(--text-secondary); font-size: 1.2rem; }
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+        .section-title { font-size: 1.75rem; margin-bottom: 1.5rem; text-align: center; }
+        .skills-category { margin-bottom: 3rem; }
+        .category-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-left: 1rem; border-left: 4px solid var(--primary-color); }
+        .category-icon { font-size: 2rem; }
+        .category-title { font-size: 1.5rem; font-weight: bold; }
+        .progress-bar { height: 8px; background: var(--bg-light); border-radius: 4px; overflow: hidden; margin-top: 0.5rem; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); border-radius: 4px; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+        .skill-card { background: var(--white); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.25rem; transition: all 0.3s; }
+        .skill-card:hover { border-color: var(--primary-color); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15); }
+        .skill-name { font-weight: 600; margin-bottom: 0.5rem; }
+        .skill-level { font-size: 0.85rem; color: var(--text-secondary); }
+        .level-badge { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.75rem; margin-left: 0.5rem; }
+        .level-expert { background: #dcfce7; color: #166534; }
+        .level-advanced { background: #fef3c7; color: #92400e; }
+        .level-intermediate { background: #dbeafe; color: #1e40af; }
+        footer { background: var(--text-primary); color: var(--white); text-align: center; padding: 2rem; margin-top: 3rem; }
+        @media (max-width: 768px) { .page-title { font-size: 1.75rem; } .nav-links { display: none; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="back-btn">← 返回首页</a>
+            <ul class="nav-links">
+                <li><a href="capabilities.html" style="color: var(--primary-color);">能力体系</a></li>
+                <li><a href="prompt-engineering.html">Prompt Engineering</a></li>
+                <li><a href="rag.html">RAG</a></li>
+                <li><a href="agent.html">Agent</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">🛠️ Skills - 技术栈</h1>
+        <p class="page-subtitle">我的技能树与工具链</p>
+    </header>
+
+    <div class="section-container">
+        <!-- 前端开发 -->
+        <div class="skills-category">
+            <div class="category-header">
+                <span class="category-icon">⚛️</span>
+                <span class="category-title">前端开发</span>
+            </div>
+            <div class="card-grid">
+                <div class="skill-card">
+                    <div class="skill-name">JavaScript/TypeScript <span class="level-badge level-expert">精通</span></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">React / Next.js <span class="level-badge level-expert">精通</span></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Vue 3 / Nuxt <span class="level-badge level-advanced">熟练</span></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Tailwind CSS / Styled Components</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI/LLM -->
+        <div class="skills-category">
+            <div class="category-header">
+                <span class="category-icon">🤖</span>
+                <span class="category-title">AI/LLM</span>
+            </div>
+            <div class="card-grid">
+                <div class="skill-card">
+                    <div class="skill-name">Prompt Engineering <span class="level-badge level-expert">精通</span></div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">LangChain / LlamaIndex</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">向量数据库 (Chroma/FAISS/Pinecone)</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">多智能体框架 (LangGraph/AutoGen)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 后端/DevOps -->
+        <div class="skills-category">
+            <div class="category-header">
+                <span class="category-icon">🔧</span>
+                <span class="category-title">后端/DevOps</span>
+            </div>
+            <div class="card-grid">
+                <div class="skill-card">
+                    <div class="skill-name">Node.js / Express</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Python / FastAPI</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Docker / Kubernetes</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">CI/CD (GitHub Actions)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 工具 -->
+        <div class="skills-category">
+            <div class="category-header">
+                <span class="category-icon">📦</span>
+                <span class="category-title">工具与平台</span>
+            </div>
+            <div class="card-grid">
+                <div class="skill-card">
+                    <div class="skill-name">Git / GitHub</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">VS Code / JetBrains</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Figma / Notion</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-name">Postman / Swagger</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 张三。All rights reserved.</p>
+    </footer>
+</body>
+</html>
