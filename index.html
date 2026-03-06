@@ -125,7 +125,28 @@
         .hero-content .tagline {
             font-size: 1.1rem;
             color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .personal-info {
             margin-bottom: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            margin-bottom: 0.75rem;
+            align-items: flex-start;
+        }
+
+        .info-label {
+            font-weight: bold;
+            min-width: 100px;
+            color: var(--text-primary);
+        }
+
+        .info-value {
+            color: var(--text-secondary);
+            flex: 1;
         }
 
         .cta-buttons {
@@ -291,7 +312,7 @@
 
         .experience-company {
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
         }
 
         .experience-role {
@@ -299,10 +320,35 @@
             font-style: italic;
         }
 
+        .experience-department {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
         .experience-date {
             margin-top: 0.5rem;
-            font-size: 0.9rem;
             color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .experience-description {
+            margin-top: 1rem;
+            color: var(--text-secondary);
+            list-style: none;
+            text-align: left;
+        }
+
+        .experience-description ul {
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-description li:last-child {
+            margin-bottom: 0;
         }
 
         /* ========== Projects 区域 ========== */
@@ -336,6 +382,11 @@
             justify-content: center;
             color: var(--white);
             font-size: 3rem;
+        }
+
+        .project-header {
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
         }
 
         .project-content {
@@ -447,6 +498,16 @@
                 font-size: 2rem;
             }
 
+            .info-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .info-label {
+                min-width: auto;
+                margin-bottom: 0.25rem;
+            }
+
             .nav-links {
                 display: none;
             }
@@ -481,10 +542,10 @@
         <div class="nav-container">
             <a href="#" class="nav-logo">李金楠</a>
             <ul class="nav-links">
-                <li><a href="#about">关于</a></li>
-                <li><a href="#experience">经历</a></li>
-                <li><a href="#projects">项目</a></li>
-                <li><a href="#capabilities">能力体系</a></li>
+                <li><a href="#about">关于我</a></li>
+                <li><a href="#experience">工作经历</a></li>
+                <li><a href="#projects">项目经历</a></li>
+                <li><a href="#portfolio">作品集</a></li>
                 <li><a href="#contact">联系方式</a></li>
             </ul>
         </div>
@@ -500,7 +561,7 @@
             <div class="hero-content">
                 <h1>李金楠</h1>
                 <p class="subtitle">AI产品经理</p>
-                <p class="tagline">5 年互联网产品经验，专注于 AI 产品规划与商业化落地</p>
+                <p class="tagline">一个AI时代的原住民</p>
                 <div class="cta-buttons">
                     <a href="#contact" class="btn btn-primary">联系我</a>
                     <a href="resume.pdf" class="btn btn-outline" download>下载简历</a>
@@ -516,30 +577,31 @@
             <div class="about-grid">
                 <div class="about-card">
                     <h3>简介</h3>
-                    <p>你好！我是一名热爱技术的 AI 产品经理。擅长 AI 产品规划与需求分析，注重用户体验和商业价值的平衡，具备从 0 到 1 的产品搭建经验。</p>
+                    <p>你好！我是一名热爱技术的AI产品经理。深度体验市场上的AI产品，擅长利用AI工具辅助产品规划设计、开发和迭代，善于从用户的角度发现产品中的问题与机会。</p>
                 </div>
                 <div class="about-card">
                     <h3>技能栈</h3>
                     <ul class="skills-list">
-                        <li class="skill-tag">产品规划与设计</li>
-                        <li class="skill-tag">用户需求分析</li>
                         <li class="skill-tag">数据分析 (SQL/Python)</li>
-                        <li class="skill-tag">AI/LLM 应用</li>
+                         <li class="skill-tag">RAG</li>
+                        <li class="skill-tag">Agent</li>
                         <li class="skill-tag">Prompt Engineering</li>
-                        <li class="skill-tag">Axure/Figma</li>
-                        <li class="skill-tag">项目管理</li>
-                        <li class="skill-tag">商业化策略</li>
+                        <li class="skill-tag">Vibe Coding</li>
+                        <li class="skill-tag">Function Call</li>
+                        <li class="skill-tag">MCP</li>
+                        <li class="skill-tag">Skills</li>
+
                     </ul>
                 </div>
                 <div class="about-card">
                     <h3>教育背景</h3>
-                    <p><strong>杭州电子科技大学</strong> - 智能科学与技术<br>&#9;本科 - 2021 ~ 2025</p>
+                    <p><strong>杭州电子科技大学</strong> - 智能科学与技术<br><span style="color: var(--text-secondary);">本科 - 2021 ~ 2025</span></p>
                     <p><strong>专业课程：</strong></p>
-                    <p>        Python与算法设计（4.9）</p>
-                    <p>&#9;数据结构（4.9）</p>
-                    <p>&#9;深度学习课程设计（5.0）</p>
-                    <p>&#9;自然语言处理（4.6）</p>
-                    <p>&#9;机器视觉（4.2）</p>
+                    <p style="color: var(--text-secondary);">Python与算法设计（4.9）</p>
+                    <p style="color: var(--text-secondary);">数据结构（4.9）</p>
+                    <p style="color: var(--text-secondary);">深度学习课程设计（5.0）</p>
+                    <p style="color: var(--text-secondary);">自然语言处理（4.6）</p>
+                    <p style="color: var(--text-secondary);">机器视觉（4.2）</p>
                 </div>
             </div>
         </div>
@@ -554,18 +616,34 @@
                 <div class="experience-item">
                     <div class="experience-dot"></div>
                     <div class="experience-card">
-                        <div class="experience-company">ABC 科技有限公司</div>
-                        <div class="experience-role">高级 AI 产品经理 | 2022 - 至今</div>
-                        <p class="experience-date">2022 年至今</p>
+                        <div class="experience-company">恒生电子股份有限公司</div>
+                        <div class="experience-department">财富管理部门测试组基金小组</div>
+                        <div class="experience-role">自动化测试开发工程师（实习）</div>
+                        <div class="experience-date">2024.10 - 2025.1</div>
+                        <div class="experience-description">
+                            <ul>
+                                <li>自动化测试脚本开发：使用Python、Shell等编程语言，开发自动化测试脚本，提高测试效率。</li>
+                                <li>自动化测试框架维护：维护和优化自动化测试框架，确保其稳定性和可扩展性。</li>
+                                <li>自动化测试执行与报告：执行自动化测试，生成测试报告，分析测试结果，及时发现和修复问题。</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <!-- 工作经历 2 -->
                 <div class="experience-item">
                     <div class="experience-dot"></div>
                     <div class="experience-card">
-                        <div class="experience-company">XYZ 网络公司</div>
-                        <div class="experience-role">产品经理 | 2019 - 2022</div>
-                        <p class="experience-date">2019 年 - 2022 年</p>
+                        <div class="experience-company">中广核运营有限公司</div>
+                        <div class="experience-department">仪表计算机部</div>
+                        <div class="experience-role">产品经理</div>
+                        <p class="experience-date">2025.7 - 至今</p>
+                        <div class="experience-description">
+                            <ul>
+                                <li>数据处理：清洗标准化多基地设备与故障数据，搭建知识库。</li>
+                                <li>产品设计：规划智能体功能，定义检索生成全流程产品逻辑。</li>
+                                <li>技术落地：基于 RAG + 工作流，实现故障分析智能体产品落地。</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -575,112 +653,116 @@
     <!-- Projects 区域 -->
     <section id="projects" class="projects">
         <div class="section-container">
-            <h2 class="section-title">项目作品</h2>
-            <div class="projects-grid">
+            <h2 class="section-title">项目经历</h2>
+            <div class="projects-grid" style="grid-template-columns: 1fr;">
                 <!-- 项目 1 -->
                 <div class="project-card">
-                    <div class="project-image">🚀</div>
+                    <div class="project-header"></div>
                     <div class="project-content">
-                        <h3 class="project-title">AI 智能客服系统</h3>
-                        <p class="project-description">主导 AI 客服产品从 0 到 1 的规划与落地，基于 LLM 实现智能问答，客户满意度提升至 95%，人工客服成本降低 60%。</p>
-                        <div class="project-tags">
-                            <span class="skill-tag">AI 产品</span>
-                            <span class="skill-tag">LLM 应用</span>
-                            <span class="skill-tag">商业化落地</span>
+                        <h3 class="project-title">电动执行器台账检索及故障分析智能体</h3>
+                        <div class="project-section">
+                            <h4>业务场景</h4>
+                            <p>多核电基地部署了多达1500余台不同厂家、不同型号的电动执行器。在核电基地的大修业务期间，准备工程师、QC、工作负责人等多个岗位需要高频执行设备信息查询、历史故障报告调取、故障诊断分析工作，支撑日常运维及紧急故障处置。</p>
                         </div>
-                        <a href="#" class="project-link" target="_blank">查看详情 →</a>
+                        <div class="project-section">
+                            <h4>需求痛点</h4>
+                            <ul>
+                                <li>依赖Excel台账管理超1.5万条设备信息，存在信息遗漏、格式混乱问题，维护难度大。</li>
+                                <li>3650余条历史故障数据分散，紧急故障时无法快速匹配同类案例，处置效率低。</li>
+                                <li>跨基地数据未打通，数据传递依赖人工发送台账。</li>
+                            </ul>
+                        </div>
+                        <div class="project-section">
+                            <h4>项目成果</h4>
+                            <ul>
+                                <li><strong>产品方案规划</strong>：规划设备信息查询、历史报告查询、故障诊断分析三大核心功能，定义"意图识别-检索-增强-生成-结构化输出"的产品流程，匹配多角色业务需求。</li>
+                                <li><strong>知识库建设</strong>：对1.5万条设备台账、3650条故障数据进行标准化、转JSON格式处理，搭建了12个多基地电动执行器信息的知识库，打破数据孤岛。</li>
+                                <li><strong>技术方案落地</strong>：确定RAG+工作流的技术方案，梳理业务流程，通过编排工作流实现电动执行器台账检索与故障分析SOP的智能化。</li>
+                                <li><strong>效率与价值提升</strong>：故障诊断分析平均响应时间108s，设备信息查询最快14s完成，间接缩短大修工期，并且为部门沉淀可复用的核电行业AI产品落地方法论。</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <!-- 项目 2 -->
                 <div class="project-card">
-                    <div class="project-image">📊</div>
+                    <div class="project-header"></div>
                     <div class="project-content">
-                        <h3 class="project-title">企业知识库问答平台</h3>
-                        <p class="project-description">负责 RAG 知识库产品规划，支持多格式文档上传、智能检索、精准问答，服务企业客户 50+，日均调用量 10 万+。</p>
-                        <div class="project-tags">
-                            <span class="skill-tag">RAG</span>
-                            <span class="skill-tag">B 端产品</span>
-                            <span class="skill-tag">SaaS</span>
+                        <h3 class="project-title">QDR智能分析助手</h3>
+                        <div class="project-section">
+                            <h4>业务场景</h4>
+                            <p>中广核多核电基地核岛、常规岛系统设备运维及大修期间，QC、技术组、工作负责人等多角色需高频完成历史QDR（故障缺陷报告）查询、故障原因与处理措施分析工作，支撑设备日常运维、故障处置及大修合规验收，保障机组安全稳定运行。</p>
                         </div>
-                        <a href="#" class="project-link" target="_blank">查看详情 →</a>
-                    </div>
-                </div>
-                <!-- 项目 3 -->
-                <div class="project-card">
-                    <div class="project-image">🤖</div>
-                    <div class="project-content">
-                        <h3 class="project-title">多 Agent 协作平台</h3>
-                        <p class="project-description">规划基于多 Agent 协作的任务自动化平台，支持工作流编排、工具调用、自主规划，提升企业运营效率 300%。</p>
-                        <div class="project-tags">
-                            <span class="skill-tag">Agent</span>
-                            <span class="skill-tag">工作流</span>
-                            <span class="skill-tag">效率工具</span>
+                        <div class="project-section">
+                            <h4>需求痛点</h4>
+                            <ul>
+                                <li>QDR检索效率极低：传统检索需根据设备功能位置编码关键字检索进行匹配，无法对异常现象进行检索。</li>
+                                <li>故障分析依赖人工：设备故障诊断需完全依托技术组人工经验，结合逐条翻阅QDR记录进行分析，效率低且易因人工经验与能力差异出现诊断偏差。</li>
+                            </ul>
                         </div>
-                        <a href="#" class="project-link" target="_blank">查看详情 →</a>
+                        <div class="project-section">
+                            <h4>项目成果</h4>
+                            <ul>
+                                <li><strong>产品方案规划</strong>：规划故障分析与报告输出、故障类型分析及占比图表展示、历史故障共性原因分析三大核心功能，定义"意图识别-检索-增强-生成-结构化输出"的产品流程，精准匹配多角色QDR查询及故障分析业务需求。</li>
+                                <li><strong>知识库建设</strong>：主导5000余条历史QDR数据的清洗与标准化处理，搭建统一的QDR知识库。</li>
+                                <li><strong>技术方案落地</strong>：确定RAG+工作流的技术方案，梳理业务流程，通过编排工作流实现实现QDR智能分析助手产品落地，替代传统人工分析模式。</li>
+                                <li><strong>效率与价值提升</strong>：QDR信息检索平均响应时间15s，故障分析平均响应时间108s，较传统模式效率提升80%，降低人工工作强度与大修时间成本，间接减少大修工期。</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Capabilities 区域 -->
-    <section id="capabilities" class="about">
+
+
+    <!-- Portfolio 区域 -->
+    <section id="portfolio" class="projects">
         <div class="section-container">
-            <h2 class="section-title">能力体系</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem;">我在 AI 产品领域的四个核心方向</p>
+            <h2 class="section-title">作品集</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem;">我的精选项目作品</p>
             <div class="projects-grid">
-                <!-- 能力 1 -->
-                <a href="prompt-engineering.html" class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #7c3aed, #6d28d9);">💡</div>
+                <!-- 作品 1 -->
+                <a href="portfolio-item1.html" class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">🎨</div>
                     <div class="project-content">
-                        <h3 class="project-title">Prompt Engineering</h3>
-                        <p class="project-description">提示词设计与优化，包括结构化 Prompt、CoT、Few-Shot 等技巧的产品化应用</p>
+                        <h3 class="project-title">小说短视频化AI工具</h3>
+                        <p class="project-description">一款能够将小说片段批量短视频化的工具，通过接入多模态模型实现自动生成视频，挖掘网络文学IP的潜在价值</p>
                         <div class="project-tags">
-                            <span class="skill-tag">提示词设计</span>
-                            <span class="skill-tag">效果评估</span>
+                            <span class="skill-tag">多模态</span>
+                            <span class="skill-tag">AIGC</span>
                         </div>
-                        <span class="project-link">进入详情 →</span>
+                        <span class="project-link">查看详情 →</span>
                     </div>
                 </a>
-                <!-- 能力 2 -->
-                <a href="rag.html" class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #059669, #047857);">🔍</div>
+                <!-- 作品 2 -->
+                <a href="portfolio-item2.html" class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #10b981, #059669);">📱</div>
                     <div class="project-content">
-                        <h3 class="project-title">RAG</h3>
-                        <p class="project-description">检索增强生成产品规划，企业知识库问答、文档智能检索等应用落地</p>
+                        <h3 class="project-title">QDR智能分析助手</h3>
+                        <p class="project-description">基于RAG和WorkFlow形式的Agent产品，支持相关信息查询、智能数据可视化和故障诊断报告输出，帮助企业降低人力与时间成本</p>
                         <div class="project-tags">
-                            <span class="skill-tag">知识问答</span>
-                            <span class="skill-tag">B 端 SaaS</span>
+                            <span class="skill-tag">RAG</span>
+                            <span class="skill-tag">WorkFlow</span>
                         </div>
-                        <span class="project-link">进入详情 →</span>
+                        <span class="project-link">查看详情 →</span>
                     </div>
                 </a>
-                <!-- 能力 3 -->
-                <a href="agent.html" class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #dc2626, #b91c1c);">🤖</div>
+                <!-- 作品 3 -->
+                <a href="portfolio-item3.html" class="project-card">
+                    <div class="project-image" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📊</div>
                     <div class="project-content">
-                        <h3 class="project-title">Agent</h3>
-                        <p class="project-description">智能体产品规划，多智能体协作、工具调用、自主规划等场景商业化</p>
+                        <h3 class="project-title">多厂商模型Token管理工具</h3>
+                        <p class="project-description">多厂商模型Token管理工具，支持查询所有账号的余额和Token余量，实时展示账号余额和使用情况</p>
                         <div class="project-tags">
-                            <span class="skill-tag">Agent 产品</span>
-                            <span class="skill-tag">任务自动化</span>
+                            <span class="skill-tag">墨刀</span>
+                            <span class="skill-tag">LLM</span>
+                            <span class="skill-tag">原型制作</span>
                         </div>
-                        <span class="project-link">进入详情 →</span>
+                        <span class="project-link">查看详情 →</span>
                     </div>
                 </a>
-                <!-- 能力 4 -->
-                <a href="skills.html" class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #d97706, #b45309);">🛠️</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Skills</h3>
-                        <p class="project-description">产品技能全景展示，涵盖产品设计、AI/LLM、数据分析、项目管理等领域</p>
-                        <div class="project-tags">
-                            <span class="skill-tag">产品能力</span>
-                            <span class="skill-tag">工具链</span>
-                        </div>
-                        <span class="project-link">进入详情 →</span>
-                    </div>
-                </a>
+
             </div>
         </div>
     </section>
@@ -691,19 +773,14 @@
             <h2 class="section-title">联系方式</h2>
             <div class="contact-info">
                 <div class="contact-item">
-                    📧 <a href="mailto:lijinnan@email.com">lijinnan@email.com</a>
+                    📧 <a href="mailto:19357508345@163.com">19357508345@163.com</a>
                 </div>
                 <div class="contact-item">
-                    📱 微信：lijinnan_pm
+                    📱 微信：Li_jn3312
                 </div>
                 <div class="contact-item">
-                    🏢 期望城市：北京 / 上海 / 远程
+                    🏢 期望城市：杭州
                 </div>
-            </div>
-            <div class="social-links">
-                <a href="https://github.com/yourusername" class="social-link" target="_blank">GH</a>
-                <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank">IN</a>
-                <a href="https://juejin.cn/user/yourid" class="social-link" target="_blank">杰</a>
             </div>
         </div>
     </section>

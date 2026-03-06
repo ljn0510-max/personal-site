@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多厂商模型Token管理工具 - 作品集</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-light: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --primary-color: #f59e0b;
+            --primary-hover: #d97706;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background-color: var(--bg-primary);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .portfolio-item {
+            background-color: var(--bg-primary);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-item h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .portfolio-item .meta {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1rem 1rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .portfolio-item .tag {
+            display: inline-block;
+            background-color: #fef3c7;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .portfolio-item h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .portfolio-item p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .product-showcase {
+            margin: 2rem 0;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .showcase-item {
+            text-align: center;
+        }
+
+        .showcase-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+        }
+
+        .showcase-caption {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .footer {
+            background-color: var(--bg-primary);
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .nav {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .portfolio-item {
+                padding: 1.5rem;
+            }
+
+            .portfolio-item h1 {
+                font-size: 2rem;
+            }
+
+            .portfolio-item .meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">主页</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">关于我</a></li>
+                <li><a href="index.html#experience">工作经历</a></li>
+                <li><a href="index.html#projects">项目经历</a></li>
+                <li><a href="index.html#capabilities">能力体系</a></li>
+                <li><a href="index.html#portfolio">作品集</a></li>
+                <li><a href="index.html#contact">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <a href="index.html#portfolio" class="back-link">← 返回作品集</a>
+        
+        <div class="portfolio-item">
+            <h1>多厂商模型Token管理工具</h1>
+            <div class="meta">
+                <span>2026年2月</span>
+                <span>构想产生</span>
+                <span>2026年3月</span>
+                <span>制作产品原型</span>
+            </div>
+            
+            <div>
+                <span class="tag">墨刀</span>
+                <span class="tag">LLM</span>
+                <span class="tag">原型制作</span>
+            </div>
+
+            <h2>产品展示</h2>
+            <div class="product-showcase">
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <img src="assets/7.png" alt="图片7" style="width: 100%; border-radius: 8px;">
+                        <p class="showcase-caption">多厂商模型Token管理工具原型</p>
+                    </div>
+                    <div class="showcase-item">
+                        <img src="assets/8.png" alt="图片8" style="width: 100%; border-radius: 8px;">
+                        <p class="showcase-caption">链接：https://modao.cc/ai/share/69ab12a375d0275ef667091c</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>产品概述</h2>
+            <p>面向AI开发者/企业用户的轻量级工具，支持多厂商AI模型Token账号统一管理、余额查询、低余额智能提醒，解决多账号Token 管理分散、余额监控不及时的问题。</p>
+
+            <h2>核心功能</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>账号管理模块</h3>
+                    <p>支持多厂商AI模型Token账号的统一管理，包括添加、删除、修改账号信息。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>余额查询模块</h3>
+                    <p>支持查询所有账号的余额和Token余量，实时展示账号余额和使用情况。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>低余额提醒模块</h3>
+                    <p>支持设置低余额提醒，当账号余额低于阈值时，自动发送提醒通知，防止Token 耗尽导致服务中断。</p>
+                </div>
+            </div>
+
+            <h2>技术架构</h2>
+            <ul>
+                <li>原型制作工具：墨刀、Lovable（展示原型为墨刀制作，相比较下墨刀的原型图更完善）</li>
+                <li>前端框架：Tailwind CSS (响应式布局、深色模式兼容性)。</li>
+                <li>图表库：ECharts (用于展示消耗趋势和模型占比)。</li>
+                <li>图标库：Iconify (提供丰富的各厂商 Logo 图标)。</li>
+            </ul>
+
+            <h2>复盘与思考</h2>
+
+            </ul>
+            <p>产品存在问题 ：</p>
+            <ul>
+                <li>Token余量查询频率受限于各厂商API的调用频率，无法实时查询。</li>
+                <li>依然无法摆脱工具属性，我始终认为Agent时代的发展趋势是直接交付结果而不是交付工具/流程，通过Multi-Agent调用Token查询、网页搜索等Skills尝试直接交付结果。</li>
+            </ul>
+            <p style="margin-top: 2rem;">对个人的价值：</p>
+            <ul>
+                <li>锻炼除了Vibe Coding方式之外用AI工具制作原型的能力</li>
+                <li>启发对未来人机交互方式和交付形式的思考。</li>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 个人作品集。All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html> 

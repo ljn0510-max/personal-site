@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能客服系统 - 作品集</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-light: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --primary-color: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background-color: var(--bg-primary);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .portfolio-item {
+            background-color: var(--bg-primary);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-item h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .portfolio-item .meta {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .portfolio-item .tag {
+            display: inline-block;
+            background-color: #ede9fe;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .portfolio-item h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .portfolio-item p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .footer {
+            background-color: var(--bg-primary);
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .nav {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .portfolio-item {
+                padding: 1.5rem;
+            }
+
+            .portfolio-item h1 {
+                font-size: 2rem;
+            }
+
+            .portfolio-item .meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">个人作品集</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">关于我</a></li>
+                <li><a href="index.html#experience">工作经历</a></li>
+                <li><a href="index.html#projects">项目经历</a></li>
+                <li><a href="index.html#capabilities">能力体系</a></li>
+                <li><a href="index.html#portfolio">作品集</a></li>
+                <li><a href="index.html#contact">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <a href="index.html#portfolio" class="back-link">← 返回作品集</a>
+        
+        <div class="portfolio-item">
+            <h1>智能客服系统</h1>
+            <div class="meta">
+                <span>2024年</span>
+                <span>智能客服</span>
+            </div>
+            
+            <div>
+                <span class="tag">智能客服</span>
+                <span class="tag">NLP</span>
+                <span class="tag">多轮对话</span>
+                <span class="tag">知识管理</span>
+            </div>
+
+            <h2>项目概述</h2>
+            <p>基于大语言模型的智能客服系统，支持多轮对话、意图识别和知识管理，提升客户服务效率。该系统旨在替代传统的客服机器人，提供更自然、更智能的客户服务体验。</p>
+
+            <h2>核心功能</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>多轮对话</h3>
+                    <p>支持复杂的多轮对话，能够理解上下文，提供连贯的对话体验。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>意图识别</h3>
+                    <p>准确识别用户意图，提供精准的回答和解决方案。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>知识管理</h3>
+                    <p>支持知识库的构建和管理，自动更新和优化知识内容。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>人工协作</h3>
+                    <p>智能路由功能，复杂问题自动转人工，提高服务效率。</p>
+                </div>
+            </div>
+
+            <h2>技术架构</h2>
+            <p>该产品采用了现代化的技术架构，包括：</p>
+            <ul>
+                <li>前端：React + WebSocket</li>
+                <li>后端：Node.js + Express</li>
+                <li>AI 引擎：OpenAI API + 自定义 NLP 模型</li>
+                <li>数据库：MongoDB + Redis</li>
+            </ul>
+
+            <h2>项目成果</h2>
+            <p>该项目在企业应用后，取得了显著的效果：</p>
+            <ul>
+                <li>客服响应时间减少 80%</li>
+                <li>客户满意度提升 35%</li>
+                <li>客服人员工作效率提高 50%</li>
+                <li>服务成本降低 45%</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 个人作品集。All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

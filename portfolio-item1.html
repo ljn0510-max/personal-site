@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 助手产品设计 - 作品集</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-light: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background-color: var(--bg-primary);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .portfolio-item {
+            background-color: var(--bg-primary);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-item h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .portfolio-item .meta {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1rem 1rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .portfolio-item .tag {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .portfolio-item h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .portfolio-item p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background-color: var(--bg-light);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .product-showcase {
+            margin: 2rem 0;
+        }
+
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .showcase-item {
+            text-align: center;
+        }
+
+        .showcase-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            margin-bottom: 1rem;
+        }
+
+        .showcase-caption {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .footer {
+            background-color: var(--bg-primary);
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .nav {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .portfolio-item {
+                padding: 1.5rem;
+            }
+
+            .portfolio-item h1 {
+                font-size: 2rem;
+            }
+
+            .portfolio-item .meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">个人作品集</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">关于我</a></li>
+                <li><a href="index.html#experience">工作经历</a></li>
+                <li><a href="index.html#projects">项目经历</a></li>
+                <li><a href="index.html#capabilities">能力体系</a></li>
+                <li><a href="index.html#portfolio">作品集</a></li>
+                <li><a href="index.html#contact">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <a href="index.html#portfolio" class="back-link">← 返回作品集</a>
+        
+        <div class="portfolio-item">
+            <h1>小说短视频化AI工具</h1>
+            <div class="meta">
+                <span>2024年10月</span>
+                <span>提出产品构想</span>
+                <span>2025年8-9月</span>
+                <span>完成产品demo</span>
+            </div>
+            
+            <div>
+                <span class="tag">产品设计</span>
+                <span class="tag">AIGC</span>
+                <span class="tag">多模态</span>
+                <span class="tag">Agent</span>
+            </div>
+
+            <h2>产品展示</h2>
+            <div class="product-showcase">
+                <div class="showcase-grid">
+                    <div class="showcase-item">
+                        <video controls style="width: 100%; border-radius: 16px;height: 100%">
+                        <source src="assets/Novel2Video.mp4" type="video/mp4">
+                        </video>
+                        <p class="showcase-caption">交互功能演示</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>产品概述</h2>
+            <p>产品初衷是为小说添加除了文字、声音以外的第三维信息传递途径——画面，从早期的网络文学本身付费阅读的商业模式到喜马拉雅等有声书平台崛起,我认为网络文学的IP仍有可以挖掘的商机，结合24年初sora的出现和24年中观察到的抖音平台经常有小说推文视频配合一些不相关画面就有不错流量的现象，在24年10月产生了这一想法，希望打造一款能够批量将小说片段短视频化的工具。</p>
+
+            <h2>核心功能</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>智能视频生成</h3>
+                    <p>基于小说片段生成内容匹配的短视频，需要确保目标一致性和视频质量。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>视频管理</h3>
+                    <p>提供视频预览、下载、存储和分享功能。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>小说片段预设与输入</h3>
+                    <p>预设了几个不同类型小说片段，用户也可以自定义输入想要进行视频化的小说片段。</p>
+                </div>
+            </div>
+
+            <h2>技术架构</h2>
+            <ul>
+                <li>实现工具：MiniMax Agent</li>
+                <li>前端：React</li>
+                <li>后端+数据库：Supabase</li>
+            </ul>
+
+            <h2>复盘与思考</h2>
+            <p>我认为该产品是一个失败的产品，主要原因有以下几点：</p>
+            <ul>
+                <li>核心原因：商业路径模糊，变现方式不清晰。一开始的构想是作为自己产出小说推文短视频的辅助工具，通过小说推文短视频的流量进行变现，后面又想做一个平台工具，为所有接小说推文短视频商单的用户提供服务，但是没有设计任何用户付费的点，也没有如何进行变现的构想。</li>
+                <li>可取代性强：当前的多模态大模型本身已经能够完成我这个产品的核心功能——生成视频，而这个产品没有任何除开视频生成以外的额外功能，自然也没有额外价值。在当前大模型军备竞赛愈演愈烈的情形下，非模型类的AI产品一定要有自己的独特价值点，才能随着模型能力的提升也不断提高价值。</li>
+                <li>产品经验不足：但是由于我本身的技术能力和做一个产品的经验不足，产品方法论也不完善，没有能够在短时间内完成一个完善的产品demo。</li>
+            </ul>
+            <p style="margin-top: 2rem;">但是我认为这个产品的失败对于我本身来说是一个重要的经历，主要体现在以下几点价值：</p>
+            <ul>
+                <li>AI能力探索：这是我第一次尝试用AI工具来把想法变成一个实际的产品，通过这个项目，我对AI在搭建demo和MVP方面的能力有了最初的了解。</li>
+                <li>产品场景探索：为多模态大模型的视频生成能力找到了一个实际的应用场景，锻炼了我在需求挖掘方面的能力。</li>
+                <li>锻炼商业嗅觉：从目前AI漫剧行业火爆的现象来看，我认为当时对于网络文学IP多维度呈现的这个场景的需求是比较大的，但是由于技术能力和资源限制，没有能够成功实现。通过这个项目，我锻炼了自己在商业场景下的嗅觉。</li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 个人作品集。All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
