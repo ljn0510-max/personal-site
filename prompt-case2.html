@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自我一致性 - Prompt案例库</title>
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-light: #f8fafc;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --primary-color: #ec4899;
+            --primary-hover: #db2777;
+            --border-color: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background-color: var(--bg-primary);
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .portfolio-item {
+            background-color: var(--bg-primary);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .portfolio-item h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .portfolio-item .meta {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 1rem 1rem;
+            margin-bottom: 2rem;
+            color: var(--text-secondary);
+        }
+
+        .portfolio-item .tag {
+            display: inline-block;
+            background-color: #fce7f3;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .portfolio-item h2 {
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            color: var(--text-primary);
+        }
+
+        .portfolio-item p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .prompt-container {
+            background-color: #f9fafb;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+
+        .prompt-content {
+            white-space: pre-wrap;
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .copy-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .copy-button.copied {
+            background-color: #10b981;
+        }
+
+        .footer {
+            background-color: var(--bg-primary);
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .nav {
+                padding: 0 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .portfolio-item {
+                padding: 1.5rem;
+            }
+
+            .portfolio-item h1 {
+                font-size: 2rem;
+            }
+
+            .portfolio-item .meta {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="logo">个人作品集</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">关于我</a></li>
+                <li><a href="index.html#experience">工作经历</a></li>
+                <li><a href="index.html#projects">项目经历</a></li>
+                <li><a href="index.html#portfolio">作品集</a></li>
+                <li><a href="index.html#prompt-cases">Prompt案例库</a></li>
+                <li><a href="index.html#contact">联系方式</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <a href="index.html#prompt-cases" class="back-link">← 返回Prompt案例库</a>
+        
+        <div class="portfolio-item">
+            <h1>自我一致性</h1>
+            <h2>Prompt内容</h2>
+            <div class="prompt-container">
+                <div class="prompt-content">
+请逐步思考我的以下问题并执行5次/生成5个答案，选择出现次数最多的答案作为最终答案：
+问题：XXX
+                </div>
+                <button class="copy-button" onclick="copyPrompt()">复制Prompt</button>
+            </div>
+
+            <h2>简要描述</h2>
+            <p>适用于对可靠性要求比较高的任务，结合具体问题或者工作流使用，能减少生成的随机性，但也会引入响应时间增加、计算成本更高的问题，需要综合衡量利弊</p>
+
+            <h2>案例展示</h2>
+            <div style="margin-bottom: 2rem;">
+                <div style="background-color: #f9fafb; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">需要识别数据的图片</h3>
+                            <img src="assets/Task1.png" alt="Task1" style="width: 100%; border-radius: 8px;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1rem;">
+                <div style="background-color: #f9fafb; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">不使用此Prompt</h3>
+                        <div style="background-color: #fce7f3; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; padding: 1rem;">
+                             <img src="assets/Prompt3.png" alt="Prompt3" style="width: 100%; border-radius: 8px;"><!-- 这里可以放置图片或视频 -->
+                        </div>
+                    </div>
+                </div>
+                <div style="background-color: #f9fafb; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden;">
+                    <div style="padding: 1.5rem;">
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">使用此Prompt</h3>
+                        <div style="background-color: #fce7f3; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; padding: 1rem;">
+                             <img src="assets/Prompt4.png" alt="Prompt4" style="width: 100%; border-radius: 8px;"><!-- 这里可以放置图片或视频 -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 个人作品集。All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyPrompt() {
+            const promptContent = document.querySelector('.prompt-content').textContent;
+            navigator.clipboard.writeText(promptContent).then(() => {
+                const button = document.querySelector('.copy-button');
+                button.textContent = '已复制！';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = '复制Prompt';
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>                        
